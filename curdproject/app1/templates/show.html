@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="s-table">
+    <table border="3">
+    <tr class="s-row1">
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Phoneno</th>
+        <th>Emailid</th>
+        <th>Class</th>
+        <th>Class-teacher</th>
+    </tr>
+    {% for u_object in u_object%}
+    {% for stu_object in stu_object%}
+    <tr>
+        
+        <td>{{u_object.id}}</td>
+        <td>{{u_object.first_name}}</td>
+        <td>{{u_object.last_name}}</td>
+        <td>{{stu_object.phoneno}}</td>
+        <td>{{u_object.email}}</td>
+        <td>{{stu_object.classno}}</td>
+        <td>{{stu_object.cteacher}}</td>
+       
+    </tr>
+    {% endfor %}
+    {% endfor %}
+
+    </table>
+</div>
+
+{%endblock content%}

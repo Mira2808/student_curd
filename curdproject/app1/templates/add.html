@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<!-- <div class="regis"> -->
+
+
+
+<div class="form">
+    <h1>Add Student</h1>
+<form action="{{add}}" method="post">
+    {% csrf_token %}
+
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+
+    <label for="firstname">FirstName:</label><br>
+    <input type="text" id="first_name" name="first_name"><br>
+
+    <label for="lastname">Lastname:</label><br>
+    <input type="text" id="last_name" name="last_name"><br>
+
+    <label for="faname">Fathername:</label><br>
+    <input type="text" id="faname" name="faname"><br>
+
+    <label for="phoneno">Phone no:(your father)</label><br>
+    <input type="number" id="phoneno" name="phoneno"><br>
+
+    <label for="email">Email-id</label><br>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="classno">Class</label><br>
+    <input type="number" id="classno" name="classno"><br>
+
+    <label for="cteacher">Class-Teacher</label><br>
+    <input type="text" id="cteacher" name="cteacher"><br>
+
+    <button type="submit" class="r-btn">Submit</button><br>
+</form>
+</div>
+<!-- </div> -->
+
+
+
+
+{% endblock content%}

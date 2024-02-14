@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="delete">
+    <form action="{{delete}}" method="POST">
+        {% csrf_token %}
+        <div class="d-text">
+            <h2>Are you sure to delete this data?</h2>
+            <input type="submit" value="Yes" class="btns">
+            <a href="{% url 'show' %}" class="btnr">No</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content%}

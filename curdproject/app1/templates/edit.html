@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    
+<div class="s-table">
+    <table border="3">
+    <tr class="s-row1">
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Emailid</th>
+        <th>Class</th>
+        <th>Class-teacher</th>
+        <th>Action</th>
+
+    </tr>
+    {% for u_object in u_object %}
+    {% for stu_object in stu_object %}
+    <tr class="s-row2">
+        <td>{{u_object.id}}</td>
+        <td>{{u_object.first_name}}</td>
+        <td>{{u_object.last_name}}</td>
+        <td>{{u_object.email}}</td>
+        <td>{{stu_object.classno}}</td>
+        <td>{{stu_object.cteacher}}</td>
+          <td>&nbsp;<button type="button" class="btns"><a href="{% url 'editfrom' u_object.id %}" style="text-decoration: none;">Update</a></button>&nbsp;<br>
+            <button type="button" class="btnr"><a href="{% url 'delete' u_object.id %}" style="text-decoration: none;">delete</a></button></td>
+    </tr>
+
+    {% endfor %}
+    {% endfor %}
+
+    </table>
+</div>
+
+
+{% endblock content%}

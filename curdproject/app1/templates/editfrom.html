@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="form">
+    <h1>Update Student</h1>
+<form action="{{editfrom}}" method="POST">
+    {% csrf_token %}
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" value="{{user_detail.username}}"><br>
+
+    <label for="first_name">FirstName:</label><br>
+    <input type="text" id="first_name" name="first_name" value="{{user_detail.first_name}}"><br>
+
+    <label for="lastname">Lastname:</label><br>
+    <input type="text" id="lname" name="last_name" value="{{user_detail.last_name}}"><br>
+
+    <label for="father">Fathername:</label><br>
+    <input type="text" id="fathername" name="faname" value="{{stu.faname}}"><br>
+
+    <label for="phoneno">phone no:(your father)</label><br>
+    <input type="number" id="phoneno" name="phoneno" value="{{stu.phoneno}}"><br>
+
+    <label for="email">Email-id</label><br>
+    <input type="email" id="email" name="email" value="{{user_detail.email}}"><br>
+
+    <label for="classno">class</label><br>
+    <input type="number" id="class" name="classno" value="{{stu.classno}}"><br>
+
+    <label for="cteacher">class-Teacher</label><br>
+    <input type="text" id="cteacher" name="cteacher" value="{{stu.cteacher}}"><br>
+
+    <button type="submit" class="r-btn">Update</button><br>
+</form>
+</div>
+
+
+
+
+
+
+{% endblock content%}
