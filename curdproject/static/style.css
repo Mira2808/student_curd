@@ -123,6 +123,7 @@ tr th{
     font-size: larger;  
 }
 
+
 @media only screen and (max-width: 750px) {
     .mira{
         display: block;

@@ -14,8 +14,8 @@
         <th>Class</th>
         <th>Class-teacher</th>
     </tr>
-    {% for u_object in u_object%}
-    {% for stu_object in stu_object%}
+    {% for u_object,stu_object in combined_objects%}
+    {% comment %} {% for stu_object in stu_object%} {% endcomment %}
     <tr>
         
         <td>{{u_object.id}}</td>
@@ -28,7 +28,7 @@
        
     </tr>
     {% endfor %}
-    {% endfor %}
+    {% comment %} {% endfor %} {% endcomment %}
 
     </table>
 </div>

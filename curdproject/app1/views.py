@@ -31,8 +31,9 @@ def add(request):
 def edit(request):
      u_object=User.objects.all()
      stu_object=Student.objects.all()
-     context={"stu_object":stu_object,"u_object":u_object}
-     return render(request,'edit.html',context=context)
+     combined_objects = zip(u_object,stu_object)
+     context={"combined_objects":combined_objects}
+     return render(request,'edit.html',context=context)    
 
 def editfrom(request,u_id):
         user_detail= User.objects.get(id=u_id)
@@ -68,7 +69,8 @@ def editfrom(request,u_id):
 def show(request):
     u_object=User.objects.all()
     stu_object=Student.objects.all()
-    context={"stu_object":stu_object,"u_object":u_object}
+    combined_objects = zip(u_object,stu_object)
+    context={"combined_objects":combined_objects}
 
     return render(request,'show.html',context=context)
    
@@ -81,6 +83,5 @@ def delete(request,u_id):
     return render(request,'delete.html',context=context)
 
 
-
-    return render(request,'delete.html')  
+  
 

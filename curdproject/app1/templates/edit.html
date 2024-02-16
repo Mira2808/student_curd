@@ -16,8 +16,8 @@
         <th>Action</th>
 
     </tr>
-    {% for u_object in u_object %}
-    {% for stu_object in stu_object %}
+    {% for u_object,stu_object in combined_objects%}
+  
     <tr class="s-row2">
         <td>{{u_object.id}}</td>
         <td>{{u_object.first_name}}</td>
@@ -25,12 +25,12 @@
         <td>{{u_object.email}}</td>
         <td>{{stu_object.classno}}</td>
         <td>{{stu_object.cteacher}}</td>
-          <td>&nbsp;<button type="button" class="btns"><a href="{% url 'editfrom' u_object.id %}" style="text-decoration: none;">Update</a></button>&nbsp;<br>
-            <button type="button" class="btnr"><a href="{% url 'delete' u_object.id %}" style="text-decoration: none;">delete</a></button></td>
+          <td>&nbsp;<button type="button" class="btns"><a href="{% url 'editfrom' u_object.id %}" style="text-decoration: none; color:rgb(134, 138, 136)">Update</a></button>&nbsp;<br>
+            <button type="button" class="btnr"><a href="{% url 'delete' u_object.id %}" style="text-decoration: none; color:rgb(134, 138, 136)">delete</a></button></td>
     </tr>
 
     {% endfor %}
-    {% endfor %}
+    
 
     </table>
 </div>
